@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy Teddy Day ❤️</title>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Comic Sans MS', cursive;
+        background: linear-gradient(to bottom, #ff9a9e, #fad0c4);
+        height: 100vh;
+        overflow: hidden;
+        text-align: center;
+    }
+
+    h1 {
+        color: #fff;
+        margin-top: 40px;
+        font-size: 3em;
+        text-shadow: 2px 2px 5px #ff4d6d;
+    }
+
+    p {
+        color: #fff;
+        font-size: 1.3em;
+        width: 80%;
+        margin: auto;
+    }
+
+    .teddy {
+        font-size: 120px;
+        margin-top: 30px;
+        animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-25px); }
+    }
+
+    .heart {
+        position: absolute;
+        color: red;
+        font-size: 24px;
+        animation: floatUp 6s linear infinite;
+    }
+
+    @keyframes floatUp {
+        0% {
+            bottom: -10px;
+            opacity: 1;
+            transform: translateX(0);
+        }
+        100% {
+            bottom: 110%;
+            opacity: 0;
+            transform: translateX(50px);
+        }
+    }
+
+    button {
+        margin-top: 30px;
+        padding: 12px 25px;
+        font-size: 18px;
+        border: none;
+        border-radius: 25px;
+        background: #ff4d6d;
+        color: white;
+        cursor: pointer;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+
+    button:hover {
+        background: #ff1e56;
+    }
+
+    .hidden {
+        display: none;
+        margin-top: 20px;
+        font-size: 1.4em;
+        color: #fff;
+    }
+</style>
+</head>
+
+<body>
+
+<h1>Happy Teddy Day, My Love 🧸❤️</h1>
+
+<div class="teddy">🧸</div>
+
+<p>
+Just like this teddy, I may not be perfect…  
+but I promise to always stay by your side,  
+hug you tight, and make you smile 💕
+</p>
+
+<button onclick="showMessage()">Click for a Surprise 💝</button>
+
+<div id="surprise" class="hidden">
+    You are my favorite person, my comfort,  
+    and my forever cuddle buddy 🥰  
+    <br><br>
+    💖 Happy Teddy Day 💖
+</div>
+
+<script>
+function showMessage() {
+    document.getElementById("surprise").style.display = "block";
+}
+
+function createHeart() {
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML = "❤️";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = (Math.random() * 3 + 3) + "s";
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 6000);
+}
+
+setInterval(createHeart, 300);
+</script>
+
+</body>
+</html>
